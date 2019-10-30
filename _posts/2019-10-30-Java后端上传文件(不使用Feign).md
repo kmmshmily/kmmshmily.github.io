@@ -52,15 +52,14 @@
                   if (StringUtils.isBlank(fileName)) {
                       throw new Exception("文件名称不能为空");
                   }
-                  urlPaperUrl = fastDFSClient.upload(new ByteArrayInputStream(buffer), fileName, null);
+                  // urlPaperUrl = "此处省略与dfs交互部分代码";
                   return urlPaperUrl;
               } catch (Exception e) {
-                  logger.error("上传纸质合同失败 :" + e);
+                  logger.error("上传文件失败 :" + e);
                   return "";
               }
           }
   
-
 - 小结
 
 上述代码已贴完毕，服务端返回的是String 类型，  所以客户端直接解析即可；如果服务端返回的是json，则客户端解析出来的字符串就是服务端返回的jaon字符串。
